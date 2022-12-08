@@ -10,6 +10,7 @@ from django.conf import settings
 from django.test.runner import DiscoverRunner
 
 BASEDIR = os.path.dirname(os.path.dirname(__file__))
+
 PUBLIC_PGP_KEY_PATH = os.path.abspath(
     os.path.join(BASEDIR, 'tests/keys/public.key')
 )
@@ -23,8 +24,10 @@ DIFF_PRIVATE_PGP_KEY_PATH = os.path.abspath(
     os.path.join(BASEDIR, 'tests/keys/private_diff.key')
 )
 
+DB_CONNECTION_URL = os.environ.get("DB_CONNECTION_URL", "postgres://localhost")
+
 diff_keys = dj_database_url.config(
-    default='postgres://localhost/pgcrypto_fields_diff'
+    default='{}/pgcrypto_fields_diff'.format(DB_CONNECTION_URL)
 )
 
 # Cannot chain onto the config() call due to error
@@ -37,7 +40,7 @@ diff_keys.update({
 settings.configure(
     DATABASES={
         'default': dj_database_url.config(
-            default='postgres://localhost/pgcrypto_fields'
+            default='{}/pgcrypto_fields'.format(DB_CONNECTION_URL),
         ),
         'diff_keys': diff_keys,
     },
@@ -51,6 +54,7 @@ settings.configure(
     PUBLIC_PGP_KEY=open(PUBLIC_PGP_KEY_PATH, 'r').read(),
     PRIVATE_PGP_KEY=open(PRIVATE_PGP_KEY_PATH, 'r').read(),
     PGCRYPTO_KEY='ultrasecret',
+    DEFAULT_AUTO_FIELD='django.db.models.BigAutoField',
     DEBUG=True,
 )
 django.setup()
