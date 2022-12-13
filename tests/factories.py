@@ -1,5 +1,5 @@
 from datetime import date, datetime
-from decimal import Decimal
+# from decimal import Decimal
 
 import factory
 
@@ -29,7 +29,7 @@ class EncryptedModelFactory(factory.django.DjangoModelFactory):
 
     date_pgp_pub_field = date.today()
     datetime_pgp_pub_field = datetime.now()
-    decimal_pgp_pub_field = Decimal('123456.78')
+    # decimal_pgp_pub_field = Decimal('123456.78')
     boolean_pgp_pub_field = True
 
     email_pgp_sym_field = factory.Sequence('email{}@symmetric.key'.format)

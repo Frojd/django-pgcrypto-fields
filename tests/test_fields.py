@@ -88,7 +88,7 @@ class TestEncryptedTextFieldModel(TestCase):
             'biginteger_pgp_pub_field',
             'pgp_pub_field',
             'char_pub_field',
-            'decimal_pgp_pub_field',
+            # 'decimal_pgp_pub_field',
             'email_pgp_sym_field',
             'integer_pgp_sym_field',
             'biginteger_pgp_sym_field',
@@ -100,7 +100,7 @@ class TestEncryptedTextFieldModel(TestCase):
             'date_pgp_pub_field',
             'datetime_pgp_pub_field',
             'time_pgp_pub_field',
-            'decimal_pgp_sym_field',
+            # 'decimal_pgp_sym_field',
             'float_pgp_pub_field',
             'float_pgp_sym_field',
             'boolean_pgp_pub_field',
@@ -934,7 +934,7 @@ class TestEncryptedTextFieldModel(TestCase):
             ).count()
         )
 
-    def test_decimal_pgp_pub_field(self):
+    def _test_decimal_pgp_pub_field(self):
         """Test DecimalPGPPublicKeyField."""
         expected = '100000.99'
         EncryptedModelFactory.create(decimal_pgp_pub_field=expected)
@@ -965,7 +965,7 @@ class TestEncryptedTextFieldModel(TestCase):
             len(items)
         )
 
-    def test_decimal_pgp_sym_field(self):
+    def _test_decimal_pgp_sym_field(self):
         """Test DecimalPGPSymmetricKeyField."""
         expected = '100000.99'
         EncryptedModelFactory.create(decimal_pgp_sym_field=expected)
@@ -996,7 +996,7 @@ class TestEncryptedTextFieldModel(TestCase):
             len(items)
         )
 
-    def test_pgp_public_key_decimal_form(self):
+    def _test_pgp_public_key_decimal_form(self):
         """Assert form field and widget for `DecimalPGPSymmetricKeyField` field."""
         expected = '100000.99'
         instance = EncryptedModelFactory.create(decimal_pgp_pub_field=expected)
@@ -1015,7 +1015,7 @@ class TestEncryptedTextFieldModel(TestCase):
             Decimal(expected)
         )
 
-    def test_pgp_symmetric_key_decimal_form(self):
+    def _test_pgp_symmetric_key_decimal_form(self):
         """Assert form field and widget for `DecimalPGPSymmetricKeyField` field."""
         expected = '100000.99'
         instance = EncryptedModelFactory.create(decimal_pgp_sym_field=expected)

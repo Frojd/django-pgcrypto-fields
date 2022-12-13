@@ -37,9 +37,9 @@ class EncryptedModel(models.Model):
     date_pgp_pub_field = fields.DatePGPPublicKeyField(blank=True, null=True)
     datetime_pgp_pub_field = fields.DateTimePGPPublicKeyField(blank=True, null=True)
     time_pgp_pub_field = fields.TimePGPPublicKeyField(blank=True, null=True)
-    decimal_pgp_pub_field = fields.DecimalPGPPublicKeyField(
-        max_digits=8, decimal_places=2, null=True, blank=True
-    )
+    # decimal_pgp_pub_field = fields.DecimalPGPPublicKeyField(
+    #     max_digits=8, decimal_places=2, null=True, blank=True
+    # )
     float_pgp_pub_field = fields.FloatPGPPublicKeyField(blank=True, null=True)
     boolean_pgp_pub_field = fields.BooleanPGPPublicKeyField(blank=True, null=True)
 
@@ -53,9 +53,9 @@ class EncryptedModel(models.Model):
     date_pgp_sym_field = fields.DatePGPSymmetricKeyField(blank=True, null=True)
     datetime_pgp_sym_field = fields.DateTimePGPSymmetricKeyField(blank=True, null=True)
     time_pgp_sym_field = fields.TimePGPSymmetricKeyField(blank=True, null=True)
-    decimal_pgp_sym_field = fields.DecimalPGPSymmetricKeyField(
-        max_digits=8, decimal_places=2, null=True, blank=True
-    )
+    # decimal_pgp_sym_field = fields.DecimalPGPSymmetricKeyField(
+    #     max_digits=8, decimal_places=2, null=True, blank=True
+    # )
     float_pgp_sym_field = fields.FloatPGPSymmetricKeyField(blank=True, null=True)
     boolean_pgp_sym_field = fields.BooleanPGPSymmetricKeyField(blank=True, null=True)
 

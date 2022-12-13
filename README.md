@@ -163,7 +163,6 @@ Supported PGP public key fields are:
  - `TimePGPPublicKeyField`
  - `IntegerPGPPublicKeyField`
  - `BigIntegerPGPPublicKeyField`
- - `DecimalPGPPublicKeyField`
  - `FloatPGPPublicKeyField`
  - `BooleanPGPPublicKeyField`
 
@@ -184,7 +183,6 @@ Supported PGP symmetric key fields are:
  - `TimePGPSymmetricKeyField`
  - `IntegerPGPSymmetricKeyField`
  - `BigIntegerPGPSymerticKeyField`
- - `DecimalPGPSymmetricKeyField`
  - `FloatPGPSymmetricKeyField`
  - `BooleanPGPSymmetricKeyField`
 
@@ -203,7 +201,6 @@ Encrypt and decrypt the data with `settings.PGCRYPTO_KEY` which acts like a pass
 | `TimeField`     | `TimePGPPublicKeyField`     | `TimePGPSymmetricKeyField`     |
 | `IntegerField`  | `IntegerPGPPublicKeyField`  | `IntegerPGPSymmetricKeyField`  |
 | `BigIntegerField`  | `BigIntegerPGPPublicKeyField`  | `BigIntegerPGPSymmetricKeyField`  |
-| `DecimalField`  | `DecimalPGPPublicKeyField`  | `DecimalPGPSymmetricKeyField`  |
 | `FloatField`    | `FloatPGPPublicKeyField`    | `FloatPGPSymmetricKeyField`    |
 | `BooleanField`  | `BooleanPGPPublicKeyField`  | `BooleanPGPSymmetricKeyField`  |
 
@@ -230,7 +227,6 @@ class MyModel(models.Model):
     date_pgp_pub_field = fields.DatePGPPublicKeyField()
     datetime_pgp_pub_field = fields.DateTimePGPPublicKeyField()
     time_pgp_pub_field = fields.TimePGPPublicKeyField()
-    decimal_pgp_pub_field = fields.DecimalPGPPublicKeyField()
     float_pgp_pub_field = fields.FloatPGPPublicKeyField()
     boolean_pgp_pub_field = fields.BooleanPGPPublicKeyField()
     
@@ -240,7 +236,6 @@ class MyModel(models.Model):
     date_pgp_sym_field = fields.DatePGPSymmetricKeyField()
     datetime_pgp_sym_field = fields.DateTimePGPSymmetricKeyField()
     time_pgp_sym_field = fields.TimePGPSymmetricKeyField()
-    decimal_pgp_sym_field = fields.DecimalPGPSymmetricKeyField()
     float_pgp_sym_field = fields.FloatPGPSymmetricKeyField()
     boolean_pgp_sym_field = fields.BooleanPGPSymmetricKeyField()
 ```

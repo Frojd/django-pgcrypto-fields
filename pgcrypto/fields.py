@@ -10,7 +10,7 @@ from pgcrypto.lookups import (
     HashLookup,
 )
 from pgcrypto.mixins import (
-    DecimalPGPFieldMixin,
+    # DecimalPGPFieldMixin,
     get_setting,
     HashMixin,
     PGPPublicKeyFieldMixin,
@@ -122,14 +122,14 @@ class BooleanPGPSymmetricKeyField(PGPPublicKeyFieldMixin, models.BooleanField):
     cast_type = 'BOOL'
 
 
-class DecimalPGPPublicKeyField(DecimalPGPFieldMixin,
-                               PGPPublicKeyFieldMixin, models.DecimalField):
-    """Decimal PGP public key encrypted field for postgres."""
-
-
-class DecimalPGPSymmetricKeyField(DecimalPGPFieldMixin,
-                                  PGPSymmetricKeyFieldMixin, models.DecimalField):
-    """Decimal PGP symmetric key encrypted field for postgres."""
+# class DecimalPGPPublicKeyField(DecimalPGPFieldMixin,
+#                                PGPPublicKeyFieldMixin, models.DecimalField):
+#     """Decimal PGP public key encrypted field for postgres."""
+#
+#
+# class DecimalPGPSymmetricKeyField(DecimalPGPFieldMixin,
+#                                   PGPSymmetricKeyFieldMixin, models.DecimalField):
+#     """Decimal PGP symmetric key encrypted field for postgres."""
 
 
 class FloatPGPPublicKeyField(PGPPublicKeyFieldMixin, models.FloatField):

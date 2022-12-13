@@ -155,13 +155,13 @@ class PGPSymmetricKeyFieldMixin(PGPMixin):
         return self.decrypt_sql.format(get_setting(connection, 'PGCRYPTO_KEY'))
 
 
-class DecimalPGPFieldMixin:
-    """Decimal PGP encrypted field mixin for postgres."""
-    cast_type = 'NUMERIC(%(max_digits)s, %(decimal_places)s)'
-
-    def get_cast_sql(self):
-        """Get cast sql."""
-        return self.cast_type % {
-            'max_digits': self.max_digits,
-            'decimal_places': self.decimal_places
-        }
+# class DecimalPGPFieldMixin:
+#     """Decimal PGP encrypted field mixin for postgres."""
+#     cast_type = 'NUMERIC(%(max_digits)s, %(decimal_places)s)'
+#
+#     def get_cast_sql(self):
+#         """Get cast sql."""
+#         return self.cast_type % {
+#             'max_digits': self.max_digits,
+#             'decimal_places': self.decimal_places
+#         }
