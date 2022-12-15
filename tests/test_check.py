@@ -2,11 +2,13 @@
 from django.conf import settings
 from django.test import override_settings, TestCase
 
-from pgcrypto.checks import check_required_settings_exist
+from pgcrypto.checks import (
+    check_pgcrypto_key_is_valid,
+    check_required_settings_exist,
+)
 
 
-class TestChecks(TestCase):
-    # noqa: D103
+class TestChecksRequiredSettings(TestCase):
     def test_pgcrypto_key_exist(self):
         errors = check_required_settings_exist(None)
         self.assertEqual(len(errors), 0)
@@ -70,3 +72,16 @@ class TestChecks(TestCase):
         self.assertEqual(errors[0].id, "pgcrypto.E001")
 
         settings.DATABASES["diff_keys"]["PRIVATE_PGP_KEY"] = key_value
+
+
+class TestInvalidCharInPgcryptoKey(TestCase):
+    @override_settings(PGCRYPTO_KEY="random123")
+    def test_pgcrypto_key_exist(self):
+        errors = check_pgcrypto_key_is_valid(None)
+        self.assertEqual(len(errors), 0)
+
+    @override_settings(PGCRYPTO_KEY="rando'm123")
+    def test_pgcrypto_key_exist(self):
+        errors = check_pgcrypto_key_is_valid(None)
+        self.assertEqual(len(errors), 1)
+        self.assertEqual(errors[0].id, "pgcrypto.E002")

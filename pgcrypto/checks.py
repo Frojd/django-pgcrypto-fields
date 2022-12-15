@@ -72,3 +72,22 @@ def _contains_pgp_public_key_field(models):
             if isinstance(field, PGPPublicKeyFieldMixin):
                 return True
     return False
+
+
+@register()
+def check_pgcrypto_key_is_valid(app_configs, **kwargs):
+    """Make sure PGCRYPTO_KEY does not contain not supported chars."""
+    PGCRYPTO_KEY = getattr(settings, "PGCRYPTO_KEY", None)
+    if not PGCRYPTO_KEY:
+        return []
+
+    if "'" in PGCRYPTO_KEY:
+        return [
+            Error(
+                "Invalid char in PGCRYPTO_KEY setting",
+                hint="Remove the ' char from key",
+                id="pgcrypto.E002",
+            ),
+        ]
+
+    return []
