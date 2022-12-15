@@ -1,3 +1,11 @@
+*Note:* This is a fork of django-pgcrypto-fields that contains the following:
+- Django 3.2 and Django 4.0 support
+- Dropped decimal field support
+- Django system checks
+- Github Actions CI runner
+
+----
+
 # django-pgcrypto-fields
 
 [![Latest Release](https://img.shields.io/pypi/v/django-pgcrypto-fields.svg)](https://pypi.org/pypi/django-pgcrypto-fields/) [![Python Versions](https://img.shields.io/pypi/pyversions/django-pgcrypto-fields.svg)](https://pypi.org/pypi/django-pgcrypto-fields/) [![Build Status](https://travis-ci.org/incuna/django-pgcrypto-fields.svg?branch=master)](https://travis-ci.org/incuna/django-pgcrypto-fields?branch=master) [![Requirements Status](https://requires.io/github/incuna/django-pgcrypto-fields/requirements.svg?branch=master)](https://requires.io/github/incuna/django-pgcrypto-fields/requirements/?branch=master) [![Updates](https://pyup.io/repos/github/incuna/django-pgcrypto-fields/shield.svg)](https://pyup.io/repos/github/incuna/django-pgcrypto-fields/) [![Coverage Status](https://coveralls.io/repos/github/incuna/django-pgcrypto-fields/badge.svg?branch=master)](https://coveralls.io/github/incuna/django-pgcrypto-fields?branch=master)
