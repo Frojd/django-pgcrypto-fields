@@ -49,7 +49,7 @@ class EncryptedModel(models.Model):
         blank=True, null=True
     )
     pgp_sym_field = fields.TextPGPSymmetricKeyField(blank=True, null=True)
-    char_sym_field = fields.CharPGPPublicKeyField(blank=True, null=True, max_length=15)
+    char_sym_field = fields.CharPGPSymmetricKeyField(blank=True, null=True, max_length=15)
     date_pgp_sym_field = fields.DatePGPSymmetricKeyField(blank=True, null=True)
     datetime_pgp_sym_field = fields.DateTimePGPSymmetricKeyField(blank=True, null=True)
     time_pgp_sym_field = fields.TimePGPSymmetricKeyField(blank=True, null=True)
