@@ -1,6 +1,7 @@
 *Note:* This is a fork of django-pgcrypto-fields that contains the following:
 - Django 3.2 and Django 4.0 support
 - Dropped decimal field support
+- Dropped Django 3.1 and 3.0 support
 - Django system checks
 - Github Actions CI runner
 
